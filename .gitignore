@@ -128,6 +128,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 # .idea and .DS_store  
-.DS_Store
-Lab1/.idea
-Lab1/.DS_Store
+.DS_Store/
+Lab1/.idea/
+Lab1/.DS_Store/
