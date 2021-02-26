@@ -77,7 +77,6 @@ def input_color():
     while True:
         color = input("Input color(one symbol: R, G or B): ")
         if (color != "exit"):
-
             if (len(color) == 1) and (color in dict_color.keys()):
                 color = get_color(color)
                 break
