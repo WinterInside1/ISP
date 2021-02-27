@@ -3,8 +3,6 @@ from os import system
 from time import sleep
 from random import randint
 
-def loh():
-    return 0
 def create_desk():
     desk = [['-' for i in range(9)] for j in range(9)]
 
