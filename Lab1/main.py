@@ -2,6 +2,8 @@ from string import ascii_letters
 from os import system
 from time import sleep
 from random import randint
+def loh():
+    return 0
 
 
 def create_desk():
