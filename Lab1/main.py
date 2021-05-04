@@ -19,7 +19,7 @@ def create_dictionary_position():
 
 
 def create_dictionary_color():
-    return {'R': 'R', 'G': 'G', 'B': 'B'}
+    return {'r': 'R', 'G': 'G', 'B': 'B'}
 
 
 def my_step(desk):
