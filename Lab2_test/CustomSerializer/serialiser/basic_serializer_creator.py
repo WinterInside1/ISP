@@ -1,6 +1,6 @@
-from CustomSerializer.Fabrics import IFabrics
-from CustomSerializer.Fabrics.Fabrics import Fabrics
-from CustomSerializer.Serialiser.BasicSerializers import JsonSerializer, TomlSerializer, YamlSerializer, \
+from CustomSerializer.fabrics import IFabrics
+from CustomSerializer.fabrics.fabrics import Fabrics
+from CustomSerializer.serialiser.basic_serializers import JsonSerializer, TomlSerializer, YamlSerializer, \
     PickleSerializer
 
 

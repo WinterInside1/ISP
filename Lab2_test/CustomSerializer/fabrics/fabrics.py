@@ -1,5 +1,5 @@
 import IFabrics
-from CustomSerializer.Serialiser.ObjectSerialiser.ObjectConverter import *
+from CustomSerializer.serialiser.object_serialiser.ObjectConverter import *
 
 
 class Fabrics:

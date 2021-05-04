@@ -2,8 +2,8 @@ import json
 import pickle
 import toml
 import yaml
-from CustomSerializer.Fabrics.IFabrics import IFabrics
-from CustomSerializer.Serialiser.ObjectSerialiser.ObjectConverter import *
+from CustomSerializer.fabrics.IFabrics import IFabrics
+from CustomSerializer.serialiser.object_serialiser.ObjectConverter import *
 
 
 class PickleSerializer(IFabrics):
