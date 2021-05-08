@@ -1,6 +1,6 @@
 import argparse
 import logging
-from CustomSerializer.serialiser.basic_serializer_creator import basic_creator
+from CustomSerializer.task.basic_serializer_creator import basic_creator
 
 logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 

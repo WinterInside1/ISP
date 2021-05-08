@@ -1,5 +1,12 @@
-import IFabrics
-from CustomSerializer.serialiser.object_serialiser.ObjectConverter import *
+from CustomSerializer.task.func_serializer import to_object
+
+
+class IFabrics:
+    def dumps(self, obj: object) -> str:
+        raise NotImplementedError
+
+    def loads(self, string: str) -> object:
+        raise NotImplementedError
 
 
 class Fabrics:

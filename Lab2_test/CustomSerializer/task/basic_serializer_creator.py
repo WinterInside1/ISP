@@ -1,7 +1,55 @@
-from CustomSerializer.fabrics import IFabrics
-from CustomSerializer.fabrics.fabrics import Fabrics
-from CustomSerializer.serialiser.basic_serializers import JsonSerializer, TomlSerializer, YamlSerializer, \
-    PickleSerializer
+import json
+import pickle
+
+import toml
+import yaml
+
+from CustomSerializer.konverter.fabrics import Fabrics, IFabrics
+
+
+def from_object(obj):
+    if not hasattr(obj, '__dict__'):
+        return obj
+    d = {}
+    for elem in vars(obj):
+        d[elem] = from_object(getattr(obj, elem))
+    return d
+
+
+class PickleSerializer(IFabrics):
+
+    def dumps(self, obj: object) -> str:
+        return pickle.dumps(obj)
+
+    def loads(self, s: str) -> object:
+        return pickle.loads(s)
+
+
+class TomlSerializer(IFabrics):
+
+    def dumps(self, obj: object) -> str:
+        return toml.dumps(from_object(obj))
+
+    def loads(self, s: str) -> object:
+        return toml.loads(s)
+
+
+class JsonSerializer(IFabrics):
+
+    def dumps(self, obj: object) -> str:
+        return json.dumps(from_object(obj), indent=4)
+
+    def loads(self, s: str) -> object:
+        return json.loads(s)
+
+
+class YamlSerializer(IFabrics):
+
+    def dumps(self, obj: object) -> str:
+        return yaml.dump(from_object(obj), sort_keys=False)
+
+    def loads(self, s: str) -> object:
+        return yaml.full_load(s)
 
 
 def basic_creator(ext: str) -> Fabrics:

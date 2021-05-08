@@ -5,10 +5,10 @@ setup(
     python_requires='>3.8',
     version='0.2',
     packages=find_packages(),
-    description='Lab2_test',
-    install_requires=['toml', 'PyYAML', 'json', 'pickle'],
+    description='Lab2_final_test',
+    install_requires=['toml', 'PyYAML'],
     setup_requires=['pytest-runner'],
-    tests_require=['pytest'],
+    tests_require=['pytest-cov'],
     test_suite='tests',
     scripts=['script/entrypoint']
 )
