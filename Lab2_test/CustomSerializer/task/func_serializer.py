@@ -2,6 +2,8 @@ import inspect
 import json
 import types
 
+from CustomSerializer.task.my_parser import parse_loads, parse_dumps
+
 ATTRIBUTES = [
     "__code__",
     "__name__",
@@ -22,7 +24,7 @@ def serialize_obj(obj) -> dict:
         return None
     if isinstance(obj, (int, float, bool, str)):
         return obj
-    if type(obj) == bytes:
+    if isinstance(obj, bytes):
         return list(obj)
     if isinstance(obj, (list, tuple)):
         lst = []
@@ -122,7 +124,7 @@ def deserialize_function(f: dict):
 
 def function_dumps(func) -> str:
     dct = serialize_obj(func)
-    return json.dumps(dct, indent=4)
+    return parse_dumps(dct)
 
 
 def function_dump(func, fp: str):
@@ -133,7 +135,7 @@ def function_dump(func, fp: str):
 
 
 def function_loads(s: str) -> object:
-    dct = json.loads(s)
+    dct = parse_loads(s)
     func = deserialize_function(dct)
     return func
 
