@@ -45,9 +45,7 @@ def parse_loads(string):
             k += 1
             if string[k + 1] == "{":
                 test = string[(k + 1):]
-                li = [m.start() for m in re.finditer('}', test)]
                 v = ""
-                li2 = [m.start() for m in re.finditer('{', test)]
                 num = -1
                 for i in test:
                     if i == "{":
